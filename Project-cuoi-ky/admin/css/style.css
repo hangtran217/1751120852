@@ -1,0 +1,30 @@
+/* Styling for All */
+.container-fluid{
+    margin:0;
+}
+
+/* Styling for Main */
+#main-main{
+    background-color:#f1f2f6;
+}
+
+main{ 
+    min-height: 300px;
+    width: 80%;
+    background-color: antiquewhite;
+    margin:0px auto;
+    padding:5px;
+    min-height: 798px;
+}
+
+.main-content{
+    flex-wrap: nowrap;
+}
+
+
+/* Styling for Footer */
+#footer-footer{
+	background-color: #C0C0C0;
+	height: 60px;
+
+}
