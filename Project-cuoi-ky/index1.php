@@ -275,9 +275,9 @@
 				<div id="myCarousel" class="carousel slide hidden-xs hidden-sm" data-ride="carousel">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
-																	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-											    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-											  </ol>
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+					</ol>
 
 					<!-- Wrapper for slides -->
 					<div id="wrapper-slider" class="wrapper-slider">
