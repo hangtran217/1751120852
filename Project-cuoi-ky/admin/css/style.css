@@ -3,18 +3,22 @@
     margin:0;
 }
 
+/* Styling for Header */
+.el1:hover{
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
 /* Styling for Main */
 #main-main{
-    background-color:#f1f2f6;
+    margin: 0;
+
 }
 
 main{ 
-    min-height: 300px;
-    width: 80%;
+    width: 100%;
     background-color: antiquewhite;
-    margin:0px auto;
-    padding:5px;
-    min-height: 798px;
+    margin:0px;
 }
 
 .main-content{
@@ -28,3 +32,4 @@ main{
 	height: 60px;
 
 }
+

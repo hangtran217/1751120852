@@ -12,19 +12,21 @@
     <title>Control Panel</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: #C0C0C0;">
         <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
         <a href="http://localhost/Project/admin/index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <h1 class="fs-2">Quản trị</h1>
         </a>
 
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/index.php" class="nav-link active" aria-current="page">Trang chủ</a></li>
-            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/courses-management.php" class="nav-link">Khóa học</a></li>
-            <li class="nav-item"><a href="http://localhost/Project/admin/customer-management.php" class="nav-link">Khách hàng</a></li>
-            <li class="nav-item"><a href="http://localhost/Project/admin/users-management.php" class="nav-link">Người dùng</a></li>
-            <li class="nav-item"><a href="http://localhost/Project/admin/profile.php" class="nav-link">Profile</a></li>
-            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/logout.php" class="nav-link">Logout</a></li>
+        <ul class="nav">
+            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/index.php" class="nav-link active el1" aria-current="page">Trang chủ</a></li>
+            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/courses-management.php" class="nav-link el1">Khóa học</a></li>
+            <li class="nav-item"><a href="http://localhost/Project/admin/customer-management.php" class="nav-link el1">Khách hàng</a></li>
+            <li class="nav-item"><a href="http://localhost/Project/admin/users-management.php" class="nav-link el1">Người dùng</a></li>
+            <li class="nav-item"><a href="http://localhost/Project/admin/profile.php" class="nav-link el1">Profile</a></li>
+            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/logout.php" class="nav-link el1">Logout</a></li>
         </ul>
+        
         </header>
+
     </div>
