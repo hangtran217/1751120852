@@ -44,7 +44,7 @@
       			</ul>
       			<ul class="navbar-nav navbar-right" id="nav-el2">
       				<li class="nav-item">
-          				<a class="nav-link active" aria-current="page" href="#" id="nav-link">ĐĂNG KÝ</a>
+          				<a class="nav-link active" aria-current="page" href="admin/addUser.php" id="nav-link">ĐĂNG KÝ</a>
         			</li>
 	        		<li class="nav-item">
 	          			<a class="nav-link active" aria-current="page" href="admin/login.php" id="nav-link">ĐĂNG NHẬP</a>

@@ -1,115 +1,33 @@
-/*
-	Author:  Hang Tran;
-	Theme:  Restaurant Food Order;
-	version:  1.0;
-*/
-
-@font-face {
-    font-family: webfontb;
-    src: url("../fonts/RobotoSlab-Bold.ttf");
+/* Styling for All */
+.container-fluid{
+    margin:0;
 }
 
-@font-face {
-    font-family: robotob;
-    src: url("../../fonts/Roboto-Bold.ttf");
+/* Styling for Header */
+.el1:hover{
+    background-color: whitesmoke;
+    color: black !important;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
-@font-face {
-    font-family: webfontb-thin;
-    src: url("../../fonts/RobotoSlab-Thin.ttf");
-}
+/* Styling for Main */
+#main-main{
+    margin: 0;
 
-@font-face {
-    font-family: webfont;
-    src: url("../../fonts/RobotoSlab-Regular.ttf");
-}
-
-@font-face {
-    font-family: webfontl;
-    src: url("../../fonts/RobotoSlab-Light.ttf");
-}
-
-.layout-header{
-	background-image: url("../../images/bgheader1.png") !important;
-	height: auto;
-}
-
-*{
-	margin: 0 0;
-	padding: 0 0;
-	font-family: webfont, Arial, Helvetica, sans-serif;
-	font-weight: bolder;
-}
-
-/*Top*/
-.top ul li{
-	font-family: webfontb;
-}
-
-.top ul li a{
-	color: rgb(169,63,147);
-
-}
-
-/*Navbar*/
-.container{
-	padding-right:15px;
-	padding-left: 15px;
-	width: 1200px;
-}
-#section1 .container{
-    height: 60px !important;
-}
-.navbar .container{
-	background-color: rgb(169,63,147);
-	border-radius: 15px/30%;
-	font-family: webfontb;
-	font-size: 14px;	
-}
-
-.nav-link{
-	margin-left: 30px;
-}
-
-#nav-link{
-	color: white;
-	font-size: 14px;
-}
-
-#nav-link:hover{
-	color: yellow;
-}
-
-/*Nút search*/
-#search{
-	padding: 4px;
-}
-.logo{
-	vertical-align: middle;
-}
-
-.img-responsive{
 }
 
 
 
-button.navbar-toggler{
-	display: flex;
-	justify-content: end;
-	margin-left: 30%;
+.main-content{
+    flex-wrap: nowrap;
+}
+
+
+/* Styling for Footer */
+#footer-footer{
+	background-color: #C0C0C0;
+	height: 60px;
 
 }
 
-@media (max-width: 1000px){
-	#section1 div ul{
-		margin-right: 4% !important;
-	}
-	.navbar-collapse{
-	background-color: rgb(169,63,147);
-	width: auto;
-	}
-}
-
-#noidung{
-	min-height: 1000px;
-}
