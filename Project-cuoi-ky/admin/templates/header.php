@@ -14,17 +14,17 @@
   <body>
     <div class="container-fluid bg-dark">
         <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
-        <a href="http://localhost/Project/admin/index.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <a href="./" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <h1 class="fs-2 text-white">Quản trị</h1>
         </a>
 
         <ul class="nav ">
-            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/index.php" class="nav-link active el1 text-white" aria-current="page">Trang chủ</a></li>
-            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/courses-management.php" class="nav-link el1 text-white">Khóa học</a></li>
-            <li class="nav-item"><a href="http://localhost/Project/admin/customersManagement.php" class="nav-link el1 text-white">Khách hàng</a></li>
-            <li class="nav-item"><a href="http://localhost/Project/admin/user-management.php" class="nav-link el1 text-white">Nhân viên</a></li>
-            <li class="nav-item"><a href="http://localhost/Project/admin/profile.php" class="nav-link el1 text-white">Profile</a></li>
-            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/logout.php" class="nav-link el1 text-white">Logout</a></li>
+            <li class="nav-item"><a href="../" class="nav-link active el1 text-white" aria-current="page">Trang chủ</a></li>
+            <li class="nav-item"><a href="./coursesManagement.php" class="nav-link el1 text-white">Khóa học</a></li>
+            <li class="nav-item"><a href="./customersManagement.php" class="nav-link el1 text-white">Khách hàng</a></li>
+            <li class="nav-item"><a href="./userManagement.php" class="nav-link el1 text-white">Nhân viên</a></li>
+            <li class="nav-item"><a href="./profile.php" class="nav-link el1 text-white">Profile</a></li>
+            <li class="nav-item"><a href="./logout.php" class="nav-link el1 text-white">Logout</a></li>
         </ul>
         
         </header>
@@ -50,7 +50,7 @@
                                         </a>
                                         <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                             <li class="w-100">
-                                                <a href="course-management.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Danh sách khóa học</span>
+                                                <a href="courseManagement.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Danh sách khóa học</span>
                                                 </a>
                                             </li>
                                             <li class="w-100">
@@ -65,7 +65,7 @@
                                         </a>
                                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                                             <li class="w-100">
-                                                <a href="invoice-management.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Danh sách đơn hàng</span>
+                                                <a href="invoiceManagement.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Danh sách đơn hàng</span>
                                                 </a>
                                                 <a href="addInvoice.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Thêm mới đơn hàng</span>
                                                 </a>
@@ -106,7 +106,7 @@
                                         </a>
                                         <ul class="collapse nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
                                             <li class="w-100">
-                                                <a href="user-management.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Danh sách nhân viên</span></a>
+                                                <a href="userManagement.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Danh sách nhân viên</span></a>
                                             </li>
                                             <li class="w-100">
                                                 <a href="addUser.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Thêm mới nhân viên</span></a>
@@ -122,8 +122,7 @@
                                                     </span>
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                                                <li><a class="dropdown-item" href="#">Cài đặt</a></li>
-                                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                                <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                                                 <li>
                                                 <hr class="dropdown-divider">
                                                 </li>

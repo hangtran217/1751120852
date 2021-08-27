@@ -5,7 +5,9 @@
 
 /* Styling for Header */
 .el1:hover{
-    background-color: antiquewhite;
+    background-color: whitesmoke;
+    color: black !important;
+    font-weight: bold;
     border-radius: 10px;
 }
 
@@ -15,11 +17,7 @@
 
 }
 
-main{ 
-    width: 100%;
-    background-color: antiquewhite;
-    margin:0px;
-}
+
 
 .main-content{
     flex-wrap: nowrap;

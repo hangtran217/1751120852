@@ -4,7 +4,7 @@
     session_start();
     // If the user is not logged in redirect to the login page...
     if (!isset($_SESSION['loggedin'])) {
-        header('Location: login.php');
+        header('Location: ../login.php');
         exit;
     }
     include("templates/header.php");
@@ -14,54 +14,61 @@
 <!-- GET dữ liệu cán bộ theo id -->
     <?php 
         $id     = $_GET['myid'];
-        $sql    = "SELECT * from tbl_customer where id_customer={$id}";
+        $sql    = "SELECT * from tbl_post where id_post={$id}";
         $query  = mysqli_query($conn,$sql);
         $row    = mysqli_fetch_assoc($query);
     ?>
 
             <form method="POST" action="">
 
-            <h2 style="margin-bottom: 30px;">Sửa thông tin khách hàng</h2>
+            <h2 style="margin-bottom: 30px;">Sửa nội dung bài viết</h2>
                 <table>
                     <tr>
-                        <td>Họ và tên: </td>
+                        <td>Tiêu đề bài viết: </td>
                         <td>
-                            <input type="text" name="txtFullName" value="<?php echo $row['fullname']; ?>">
+                            <input style="width: 1112px;" type="text" name="txtTitle" value="<?php echo $row['title']; ?>">
                         </td>
                     </tr>
                     <tr>
-                        <td>Email: </td>
-                        <td>
-                            <input type="email" name="txtEmail" value="<?php echo $row['email']; ?>">
-                        </td>
+                        <td  nowrap="nowrap">Nội dung: </td>
+                        <td><textarea name="txtContent" id="content" rows="10" cols="150"><?php echo $row['content']; ?></textarea></td>
                     </tr>
                     <tr>
-                        <td>Địa chỉ</td>
+                        <td>Thể loại</td>
                         <td>
-                            <input type="text" name="txtAddress" value="<?php echo $row['address']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Số điện thoại</td>
-                        <td>
-                            <input type="text" name="txtPhone" value="<?php echo $row['phone']; ?>">
+                            <select  name="txtType" class="form-select" aria-label="Số điện thoại">
+                                <option selected>Chọn thể loại</option>
+                                
+                                <?php  
+                                     $sql = "SELECT DISTINCT type FROM tbl_post";
+                                                
+                                        $result = mysqli_query($conn,$sql);
+                                        while($row = mysqli_fetch_array($result)){
+                                ?>
+                                            <option ><?php echo $row['type']; ?></option>
+                                <?php
+                                        }
+
+                                                        
+                                ?>
+                                
+                            </select>
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <input type="submit" name="btnEditUser" value="Save" class="btn btn-success">
+                            <input type="submit" name="btnEditPost" value="Save" class="btn btn-success">
                         </td>
                     </tr>
                     
                 </table>
             </form>
             <?php
-                if(isset($_POST['btnEditUser'])){
-                    $fullName   = $_POST['txtFullName'];
-                    $email      = $_POST['txtEmail'];
-                    $address    = $_POST['txtAddress'];
-                    $phone      = $_POST['txtPhone'];
+                if(isset($_POST['btnEditPost'])){
+                    $title   = $_POST['txtTitle'];
+                    $content      = $_POST['txtContent'];
+                    $type    = $_POST['txtType'];
                    // alert("1");có đang BỎ TRỐNG trường nào KO?
                     //CSDL của chúng ta đã lưu Mật khẩu ở dạng THÔ
                     //Kiểm tra: Trước khi thêm Tài khoản, phải kiểm tra username và email này có tồn tại chưa?
@@ -69,11 +76,11 @@
                     //Kiểm tra: Dữ liệu người dùng nhập 
                     //Bước 02: Thực hiện truy vấn
 
-                    $sql = "UPDATE tbl_customer SET fullname = '$fullName', email ='$email', address = '$address', phone ='$phone'
-                            WHERE id_customer = '$id'";
+                    $sql = "UPDATE tbl_post SET title ='$title', content = '$content', type ='$type'
+                            WHERE id_post = '$id'";
                     if(mysqli_query($conn,$sql)){
                         //echo '<script>alert("Incorrect username and/or password!")</script>';
-                         echo '<script>window.location.replace("customersManagement.php")</script>';
+                         echo '<script>window.location.replace("postManagement.php")</script>';
                     }
                 }
             ?>

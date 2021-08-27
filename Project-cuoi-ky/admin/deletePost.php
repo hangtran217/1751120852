@@ -8,7 +8,7 @@
 		$sql= "DELETE FROM tbl_post WHERE id_post={$id}";
 		$query = mysqli_query($conn,$sql) or die('sql error'.mysqli_error($conn));
 		$_SESSION['success'] = 'Xóa thành công bài viết';
-		header('location:../admin/customersManagement.php');
+		header('location:./customersManagement.php');
 	
 
 ?>

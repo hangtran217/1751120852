@@ -4,7 +4,7 @@
     session_start();
     // If the user is not logged in redirect to the login page...
     if (!isset($_SESSION['loggedin'])) {
-        header('Location: login.php');
+        header('Location: ../login.php');
         exit;
     }
     include("templates/header.php");
@@ -50,14 +50,14 @@
                     //Kiểm tra: Trước khi thêm Tài khoản, phải kiểm tra username và email này có tồn tại chưa?
                     //Nếu chưa tồn tại thì mới thêm;
                     //Bước 02: Thực hiện truy vấn
-                    $sql = "INSERT INTO tbl_post (title, username, email, password, address, phone)
-                            VALUES ('$fullName','$userName','$email',' $pass_hash', '$address', '$phone')";
+                    $sql = "INSERT INTO tbl_post (title, type, content)
+                            VALUES ('$title','$content','$type')";
                     // echo $sql;
                     // $result = mysqli_query($conn,$sql);
                     
                     // $count=mysqli_num_rows($result);
                     if(mysqli_query($conn,$sql)){
-                        echo '<script>window.location.replace("customersManagement.php")</script>';
+                        echo '<script>window.location.replace("postManagement.php")</script>';
                     }
                     
                 }
