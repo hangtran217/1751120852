@@ -4,7 +4,7 @@
     session_start();
     // If the user is not logged in redirect to the login page...
     if (!isset($_SESSION['loggedin'])) {
-        header('Location: ./login.php');
+        header('Location: login.php');
         exit;
     }
     include("templates/header.php");
@@ -48,7 +48,10 @@
                                         <h4 class="mr-1"><?php echo $row['price']?>.00 BIGOLD</h4>
                                     </div>
                                     <h6 class="text-success"></h6>
-                                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Chi tiết</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Thêm vào giỏ hàng</button></div>
+                                    <div class="d-flex flex-column mt-4">
+                                        <a class="mt-2" href="editCourse.php?id=<?php echo $row['id_course'] ?>"><button class="btn btn-primary btn-sm" style='width: 250px;' type="button">Chi tiết</button></a>
+                                        <a class="mt-2" href="editCourse.php?id=<?php echo $row['id_course'] ?>"><button class="btn btn-outline-primary btn-sm mt-2" style='width: 250px;' type="button">Chỉnh sửa thông tin sản phẩm</button></a>
+                                    </div>
                                 </div>
                             </div>
                             <?php

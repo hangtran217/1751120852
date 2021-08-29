@@ -37,7 +37,7 @@
 		}
 
 		// Prepare our SQL, preparing the SQL statement will prevent SQL injection.
-		if ($stmt = $conn->prepare('SELECT id_admin, password FROM tbl_admin WHERE username = ?')) {
+		if ($stmt = $conn->prepare('SELECT id_customer, password FROM tbl_customer WHERE username = ?')) {
 			// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
 			$stmt->bind_param('s', $_POST['username']);
 			$stmt->execute();
@@ -52,10 +52,10 @@
 				// Verification success! User has logged-in!
 				// Khởi tạo sessions, ta biết được user đã đăng nhập, nó hoạt động như cookies nhưng lưu dữ liệu trên server.
 				session_regenerate_id();
-				$_SESSION['loggedin'] = TRUE; //Tạo SESSION, nếu kết quả trả về là TRUE thì đã log in
-				$_SESSION['name'] = $_POST['username'];
+				$_SESSION['logged_in'] = TRUE; //Tạo SESSION, nếu kết quả trả về là TRUE thì đã log in
+				$_SESSION['username'] = $_POST['username'];
 				$_SESSION['id'] = $id;
-				header('Location:'.SITEURL.'/admin/');
+				header('Location:'.SITEURL.'/');
 			} else {
 				// Incorrect password
 				echo '<script>alert("Incorrect username and/or password!")</script>';

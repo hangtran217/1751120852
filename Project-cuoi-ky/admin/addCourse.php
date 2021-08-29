@@ -4,7 +4,7 @@
     session_start();
     // If the user is not logged in redirect to the login page...
     if (!isset($_SESSION['loggedin'])) {
-        header('Location: ./login.php');
+        header('Location: login.php');
         exit;
     }
     include("templates/header.php");
@@ -14,15 +14,15 @@
 
                 <table>
                     <tr>
-                <td colspan="2"><h3>Thêm bài viết mới</h3></td>
+                <td colspan="2"><h3>Thêm sản phẩm mới</h3></td>
             </tr>
                     <tr>
-                        <td nowrap="nowrap">Tiêu đề bài viết :</td>
-                        <td><input type="" name="txtTitle" id="content" style="width: 1112px;"> </td>
+                        <td nowrap="nowrap">Tên sản phẩm:</td>
+                        <td><input type="" name="txtCourseName" id="content" style="width: 1112px;"> </td>
                     </tr>
                     <tr>
-                        <td  nowrap="nowrap">Nội dung: </td>
-                        <td><textarea name="txtContent" id="content" rows="10" cols="150"></textarea></td>
+                        <td  nowrap="nowrap">Mô tả: </td>
+                        <td><textarea name="txtDescription" id="content" rows="10" cols="150"></textarea></td>
                     </tr>
                     <tr>
                         <td>Thể loại</td>
@@ -50,14 +50,14 @@
                     //Kiểm tra: Trước khi thêm Tài khoản, phải kiểm tra username và email này có tồn tại chưa?
                     //Nếu chưa tồn tại thì mới thêm;
                     //Bước 02: Thực hiện truy vấn
-                    $sql = "INSERT INTO tbl_post (title, type, content)
-                            VALUES ('$title','$content','$type')";
+                    $sql = "INSERT INTO tbl_post (title, username, email, password, address, phone)
+                            VALUES ('$fullName','$userName','$email',' $pass_hash', '$address', '$phone')";
                     // echo $sql;
                     // $result = mysqli_query($conn,$sql);
                     
                     // $count=mysqli_num_rows($result);
                     if(mysqli_query($conn,$sql)){
-                        echo '<script>window.location.replace("postManagement.php")</script>';
+                        echo '<script>window.location.replace("customersManagement.php")</script>';
                     }
                     
                 }

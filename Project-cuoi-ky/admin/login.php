@@ -21,8 +21,7 @@
 				<input type="password" name="password" placeholder="Password" id="password" required>
 				<input type="submit" value="Login" name="submit">
 				<ul class="nav">
-		            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/register.php" class="nav-link active" aria-current="page">Chưa có tài khoản. Đăng ký ngay!</a></li>
-		            <li class="nav-item"><a href="http://localhost/project-cuoi-ky/admin/forgotpassword.php" class="nav-link">Quên mật khẩu?</a></li>
+		            <li class="nav-item"><a href="./forgotpassword.php" class="nav-link">Quên mật khẩu?</a></li>
 		        </ul>
 			</form>
 

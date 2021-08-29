@@ -43,12 +43,26 @@
         			</li>
       			</ul>
       			<ul class="navbar-nav navbar-right" id="nav-el2">
-      				<li class="nav-item">
-          				<a class="nav-link active" aria-current="page" href="register.php" id="nav-link">ĐĂNG KÝ</a>
-        			</li>
-	        		<li class="nav-item">
-	          			<a class="nav-link active" aria-current="page" href="login.php" id="nav-link">ĐĂNG NHẬP</a>
-	        		</li>
+              <?php 
+                if(isset($_SESSION['logged_in'])){
+              ?>
+              <li class="nav-link active" id="nav-link">Xin chào <?php echo $_SESSION['username']?></li>
+                  <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="logout.php" id="nav-link">Logout</a>
+              </li>
+              <?php 
+                }else{ 
+              ?>
+                   <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="register.php" id="nav-link">ĐĂNG KÝ</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="login.php" id="nav-link">ĐĂNG NHẬP</a>
+              </li>
+              <?php 
+                } 
+              ?>
+      				
 	        		
 	        		<li>
 						<form class="d-flex justify-content-end">
