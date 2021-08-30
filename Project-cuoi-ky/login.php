@@ -1,3 +1,8 @@
+<?php
+    session_start();
+	include("admin/connection.php");
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -29,8 +34,7 @@
 		</div>
 
    <?php  
-		session_start();
-		include("admin/connection.php");
+		
 	   	if ( !isset($_POST['username'], $_POST['password']) ) {
 		// Could not get the data that should have been sent.
 		exit('');
@@ -44,18 +48,20 @@
 			// Store the result so we can check if the account exists in the database.
 			$stmt->store_result();
 			if ($stmt->num_rows > 0) {
+			$hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 			$stmt->bind_result($id, $password);
 			$stmt->fetch();
 			// Account exists, now we verify the password.
 			// Note: remember to use password_hash in your registration file to store the hashed passwords.
-			if ($_POST['password'] === $password) {
+			if(password_verify($_POST['password'], $hashed_password)) {
+			//if ($_POST['password'] === $password) {
 				// Verification success! User has logged-in!
 				// Khởi tạo sessions, ta biết được user đã đăng nhập, nó hoạt động như cookies nhưng lưu dữ liệu trên server.
-				session_regenerate_id();
+				
 				$_SESSION['logged_in'] = TRUE; //Tạo SESSION, nếu kết quả trả về là TRUE thì đã log in
 				$_SESSION['username'] = $_POST['username'];
 				$_SESSION['id'] = $id;
-				header('Location:'.SITEURL.'/');
+				echo '<script>window.location.replace("index.php")</script>';
 			} else {
 				// Incorrect password
 				echo '<script>alert("Incorrect username and/or password!")</script>';
