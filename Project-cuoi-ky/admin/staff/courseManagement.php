@@ -3,8 +3,8 @@
     include('connection.php');
     session_start();
     // If the user is not logged in redirect to the login page...
-    if (!isset($_SESSION['loggedin'])) {
-        header('Location: ./login.php');
+    if (!isset($_SESSION['loggedinStaff'])) {
+        header('Location: ../login.php');
         exit;
     }
     include("templates/header.php");
@@ -35,7 +35,7 @@
                             ?>
                             
                                 <div class="row p-2 bg-white border rounded">
-                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="../images/<?php echo $row['image']?>"></div>
+                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="../../images/<?php echo $row['image']?>"></div>
                                 <div class="col-md-6 mt-1">
                                     <h5><?php echo $row['course_name']?></h5>
                                     <div class="d-flex flex-row">
@@ -48,7 +48,10 @@
                                         <h4 class="mr-1"><?php echo $row['price']?>.00 BIGOLD</h4>
                                     </div>
                                     <h6 class="text-success"></h6>
-                                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Chi tiết</button>
+                                    <div class="d-flex flex-column mt-4">
+                                        <a class="mt-2" href="editCourse.php?id=<?php echo $row['id_course'] ?>"><button class="btn btn-primary btn-sm" style='width: 250px;' type="button">Chi tiết</button></a>
+                                        <a class="mt-2" href="editCourse.php?id=<?php echo $row['id_course'] ?>"><button class="btn btn-outline-primary btn-sm mt-2" style='width: 250px;' type="button">Chỉnh sửa thông tin sản phẩm</button></a>
+                                    </div>
                                 </div>
                             </div>
                             <?php

@@ -3,21 +3,21 @@
     include('connection.php');
     session_start();
     // If the user is not logged in redirect to the login page...
-    if (!isset($_SESSION['loggedin'])) {
-        header('Location: ./login.php');
+    if (!isset($_SESSION['loggedinStaff'])) {
+        header('Location: ../login.php');
         exit;
     }
     include("templates/header.php");
 ?>
     <div id="main-main" class="">
-            <h2 class="d-flex justify-content-center">Quản lý khách hàng</h2>
+            <h2 class="d-flex justify-content-center">Quản lý bài viết</h2>
             <div style="">
                 <ul class="nav d-flex justify-content-center">
                     <li class="nav-item">
-                        <input style="height: 38px; width: 500px;" class="" type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm theo tên khách hàng" title="Type in a name">
+                        <input style="height: 38px; width: 500px;" class="" type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm theo tên bài viết" title="Type in a name">
                     </li>
                     <li>
-                        <a href="addCustomer.php" class="btn btn-success" style = "margin-left: 30px;">Thêm khách hàng</a>
+                        <a href="addPost.php" class="btn btn-success" style = "margin-left: 30px;">Thêm bài viết mới</a>
                         
                     </li>
                 </ul>
@@ -29,11 +29,9 @@
                                 <thead>
                                     <tr>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 40px;">#</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Họ và tên</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Username</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Email</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Địa chỉ</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">BIGOLD</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Tiêu đề</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Thể loại</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Ngày đăng bài</th>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">Cập nhật</th>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">Xóa</th>
                                     </tr>
@@ -41,7 +39,7 @@
                                 <tbody>
                                     <?php
                                        
-                                        $sql = "SELECT * FROM tbl_customer";
+                                        $sql = "SELECT * FROM tbl_post";
                                         $result = mysqli_query($conn,$sql);
                                         if(mysqli_num_rows($result)>0){
                                             $i=1;
@@ -49,13 +47,11 @@
                                     ?>
                                     <tr>
                                         <th scope="row" style="overflow: hidden; text-align: center;"><?php echo $i; ?></th>
-                                        <td> <?php echo $row['fullname']; ?> </td>
-                                        <td > <?php echo $row['username']; ?></td>
-                                        <td> <?php echo $row['email']; ?></td>
-                                        <td > <?php echo $row['address']; ?></td>
-                                        <td> <?php echo $row['bigold']; ?></td>
-                                        <td><a href="editCustomer.php?myid=<?php echo $row['id_customer']; ?>"><i class="bi bi-pencil-square"></i></a></td>
-                                        <td><a href="deleteCustomer.php?myid=<?php echo $row['id_customer']; ?>"><i class="bi bi-archive-fill"></i></a></td>
+                                        <td> <?php echo $row['title']; ?> </td>
+                                        <td > <?php echo $row['type']; ?></td>
+                                        <td> <?php echo $row['date_post']; ?></td>
+                                        <td><a href="editPost.php?myid=<?php echo $row['id_post']; ?>"><i class="bi bi-pencil-square"></i></a></td>
+                                        <td><a href="deletePost.php?myid=<?php echo $row['id_post']; ?>"><i class="bi bi-archive-fill"></i></a></td>
                                     <?php
                                         $i++;
                                         }

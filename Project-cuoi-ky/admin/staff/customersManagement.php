@@ -3,8 +3,8 @@
     include('connection.php');
     session_start();
     // If the user is not logged in redirect to the login page...
-    if (!isset($_SESSION['loggedin'])) {
-        header('Location: ./login.php');
+    if (!isset($_SESSION['loggedinStaff'])) {
+        header('Location: ../login.php');
         exit;
     }
     include("templates/header.php");
@@ -29,13 +29,12 @@
                                 <thead>
                                     <tr>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 40px;">#</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Họ và tên</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Username</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 170px;">Họ và tên</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 150px;">Username</th>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Email</th>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Địa chỉ</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">BIGOLD</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">BIGOLD</th>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">Cập nhật</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">Xóa</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,7 +54,6 @@
                                         <td > <?php echo $row['address']; ?></td>
                                         <td> <?php echo $row['bigold']; ?></td>
                                         <td><a href="editCustomer.php?myid=<?php echo $row['id_customer']; ?>"><i class="bi bi-pencil-square"></i></a></td>
-                                        <td><a href="deleteCustomer.php?myid=<?php echo $row['id_customer']; ?>"><i class="bi bi-archive-fill"></i></a></td>
                                     <?php
                                         $i++;
                                         }

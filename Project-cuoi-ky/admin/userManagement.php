@@ -14,10 +14,10 @@
             <div style="">
                 <ul class="nav d-flex justify-content-center">
                     <li class="nav-item">
-                        <input style="height: 38px; width: 500px;" class="" type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm theo tên khách hàng" title="Type in a name">
+                        <input style="height: 38px; width: 500px;" class="" type="text" id="myInput" onkeyup="myFunction()" placeholder="Tìm theo tên" title="Type in a name">
                     </li>
                     <li>
-                        <a href="addCustomer.php" class="btn btn-success" style = "margin-left: 30px;">Thêm khách hàng</a>
+                        <a href="addCustomer.php" class="btn btn-success" style = "margin-left: 30px;">Thêm nhân sự</a>
                         
                     </li>
                 </ul>
@@ -29,19 +29,19 @@
                                 <thead>
                                     <tr>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 40px;">#</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Họ và tên</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Username</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 170px;">Họ và tên</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 150px;">Username</th>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Email</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Địa chỉ</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">BIGOLD</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Giới thiệu</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 200px;">Quyền</th>
+                                        <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">Đổi mật khẩu</th>
                                         <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">Cập nhật</th>
-                                        <th scope="col"style="overflow: hidden; text-align: center; width: 100px;">Xóa</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                        
-                                        $sql = "SELECT * FROM tbl_customer";
+                                        $sql = "SELECT * FROM tbl_admin";
                                         $result = mysqli_query($conn,$sql);
                                         if(mysqli_num_rows($result)>0){
                                             $i=1;
@@ -52,10 +52,16 @@
                                         <td> <?php echo $row['fullname']; ?> </td>
                                         <td > <?php echo $row['username']; ?></td>
                                         <td> <?php echo $row['email']; ?></td>
-                                        <td > <?php echo $row['address']; ?></td>
-                                        <td> <?php echo $row['bigold']; ?></td>
-                                        <td><a href="editCustomer.php?myid=<?php echo $row['id_customer']; ?>"><i class="bi bi-pencil-square"></i></a></td>
-                                        <td><a href="deleteCustomer.php?myid=<?php echo $row['id_customer']; ?>"><i class="bi bi-archive-fill"></i></a></td>
+                                        <td > <?php echo $row['introduction']; ?></td>
+                                        <td> <?php if ($row['permission']==0) {
+                                            echo 'Giảng viên';
+                                        }elseif ($row['permission']==1) {
+                                            echo 'Nhân viên';
+                                        }else{
+                                            echo 'Quản trị viên';
+                                        } ?></td>
+                                        <td><a href="changePassword.php?myid=<?php echo $row['id_admin']; ?>"><i class="bi bi-pencil-fill"></i></a></td>
+                                        <td><a href="editUser.php?myid=<?php echo $row['id_admin']; ?>"><i class="bi bi-pencil-square"></i></a></td>
                                     <?php
                                         $i++;
                                         }

@@ -22,9 +22,8 @@
             <li class="nav-item"><a href="../" class="nav-link active el1 text-white" aria-current="page">Trang chủ</a></li>
             <li class="nav-item"><a href="./coursesManagement.php" class="nav-link el1 text-white">Khóa học</a></li>
             <li class="nav-item"><a href="./customersManagement.php" class="nav-link el1 text-white">Khách hàng</a></li>
-            <li class="nav-item"><a href="./userManagement.php" class="nav-link el1 text-white">Nhân viên</a></li>
             <li class="nav-item"><a href="./profile.php" class="nav-link el1 text-white">Profile</a></li>
-            <li class="nav-item"><a href="./logout.php" class="nav-link el1 text-white">Logout</a></li>
+            <li class="nav-item"><a href="../logout.php" class="nav-link el1 text-white">Logout</a></li>
         </ul>
         
         </header>
@@ -101,19 +100,6 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#submenu5" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                            <i class="fs-4 bi-people text-white"></i> <span class="ms-1 d-none d-sm-inline text-white">Quản lý nhân sự</span> 
-                                        </a>
-                                        <ul class="collapse nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
-                                            <li class="w-100">
-                                                <a href="userManagement.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Danh sách nhân sự</span></a>
-                                            </li>
-                                            <li class="w-100">
-                                                <a href="addUser.php" class="nav-link px-0"> <span class="d-none d-sm-inline">Thêm mới nhân sự</span></a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <div class="dropdown py-5">
                                             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
@@ -126,7 +112,7 @@
                                                 <li>
                                                 <hr class="dropdown-divider">
                                                 </li>
-                                                <li><a class="dropdown-item" href="http://localhost/project-cuoi-ky/admin/logout.php">Log out</a></li>
+                                                <li><a class="dropdown-item" href="../logout.php">Log out</a></li>
                                             </ul>
                                         </div>
                                     </li>
